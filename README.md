@@ -1,8 +1,8 @@
 ![John Smith: Technician's Remix](pack.png)
 
-# John Smith Technician's Remix - Resource Pack
+### John Smith Technician's Remix - Resource Pack
 
-## for Vanilla Minecraft
+#### for Vanilla Minecraft
 
 <http://www.johnsmithlegacy.co.uk/>
 
@@ -18,7 +18,7 @@ Releases for other versions of Minecraft can be found on our CurseForge page.
 
 ---
 
-## Installation Instructions
+#### Installation Instructions
 
 1. Run the Minecraft Launcher, log in and press the Play button.
 2. On the Minecraft title screen select "Options"
@@ -28,7 +28,7 @@ Releases for other versions of Minecraft can be found on our CurseForge page.
 
 ---
 
-## Selecting the Resource Pack
+#### Selecting the Resource Pack
 
 1. Run the Minecraft Launcher, log in and press the Play button.
 2. On the Minecraft title screen select "Options"
