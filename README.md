@@ -1,4 +1,4 @@
-![John Smith: Technician's Remix](jstrv.png)
+![John Smith: Technician's Remix](pack.png)
 
 # John Smith Technicians Remix - Resource Pack
 
