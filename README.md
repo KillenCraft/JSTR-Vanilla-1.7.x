@@ -1,6 +1,6 @@
 ![John Smith: Technician's Remix](pack.png)
 
-# John Smith Technicians Remix - Resource Pack
+# John Smith Technician's Remix - Resource Pack
 
 ## for Vanilla Minecraft
 
