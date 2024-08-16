@@ -4,17 +4,15 @@
 
 #### for Vanilla Minecraft
 
-<http://www.johnsmithlegacy.co.uk/>
+NOTE: This Resource Pack is designed for Minecraft version 1.7.x.
 
 ---
 
-Thank you for downloading this Resource Pack.
+#### Building the resource pack
 
-Please follow these instructions carefully.
-
-NOTE:- This Resource Pack is designed for Minecraft version 1.7.x.
-
-Releases for other versions of Minecraft can be found on our CurseForge page.
+1) Clone or download this repository.
+2) Execute `gradlew` from the command line inside the root folder.
+3) when the builkd is complete, find your assembled pack in `out/distributions`.
 
 ---
 
