@@ -2,39 +2,37 @@ plugins {
     id 'base'
 }
 
-defaultTasks 'resourcepack'
-buildDir = 'out'
+defaultTasks 'build'
+buildDir = layout.projectDir.dir('out')
 
-// Load the archive file name from the properties file
-def packFileName = project.findProperty('packFileName') ?: 'resourcepack.zip'
-
-// Task to sync files while maintaining folder structure and only copying changed files
-task unpacked(type: Sync) {
-    includeEmptyDirs = false
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    from('assets') {
-        into 'assets'
-    }
-    from('Reika') {
-        into 'Reika'
-    }
-    from ('pack.png', 'pack.mcmeta')
-
-    into "${buildDir}/unpacked"
-
-    exclude '**/*.md', '**/*.psd', '**/desktop.ini', '**/Thumbs.db'
-}
+// Load properties
+def sourceDirs = project.findProperty('sourceDirs')?.split(',') ?: []
+def sourceFiles = project.findProperty('sourceFiles')?.split(',') ?: []
+def excludePatterns = project.findProperty('excludePatterns')?.split(',') ?: []
 
 // Task to create a ZIP file from the unpacked files
-task resourcepack(type: Zip) {
+tasks.register('zipPack', Zip) {
     includeEmptyDirs = false
     group = 'Build'
     description = "Builds the resource pack."
-    archiveFileName.set(packFileName)
+    destinationDirectory.set(buildDir)
 
-    from tasks.unpacked
-    dependsOn tasks.unpacked
+    // Add files to the ZIP
+    sourceDirs.each { dir ->
+        from(dir.trim()) {
+            into dir.trim()
+        }
+    }
+    sourceFiles.each { file ->
+        from(file.trim())
+    }
+
+    // Exclude unnecessary files
+    excludePatterns.each { pattern ->
+        exclude pattern.trim()
+    }
 }
 
-tasks.assemble.dependsOn 'resourcepack'
+tasks.named('assemble') {
+    dependsOn(tasks.named('zipPack'))
+}
